@@ -48,6 +48,7 @@ function updateAgeWithResponse(name, response_text){
     } else{
         var age = parseInt(response_json['age']);
         makeNetworkCallToPokeAPI(name, age);
+        resetNameLabelText();
     }
 } // end of updateAgeWithResponse
 
@@ -84,6 +85,7 @@ function updatePokemonWithResponse(name, response_text){
     label2.innerHTML =  name.replace(/\b\w/g, l => l.toUpperCase()) + ', you are a ' + response_json['name'].replace(/\b\w/g, l => l.toUpperCase());
 } // end of updateTriviaWithResponse
 
-function resetPokemonLabelText() {
-  
+function resetLabels() {
+    var resetLabel = document.getElementById("response-line2");
+	  resetLabel.innerHTML = "";
 }
