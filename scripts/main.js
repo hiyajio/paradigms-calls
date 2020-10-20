@@ -69,7 +69,7 @@ function makeNetworkCallToPokeAPI(name, age) {
 		// must be written before send
 		console.log(xhr.responseText);
 		// do something
-		updatePokemonWithResponse(name, xhr.responseText);
+		updatePokemonWithResponse(name, age, xhr.responseText);
 	};
 
 	// set up onerror
@@ -82,17 +82,20 @@ function makeNetworkCallToPokeAPI(name, age) {
 	xhr.send(null); // last step - this actually makes the request
 } // end of make nw call
 
-function updatePokemonWithResponse(name, response_text) {
+function updatePokemonWithResponse(name, age, response_text) {
 	console.log("entered updatePokemonWithResponse!");
 
 	var response_json = JSON.parse(response_text);
 	// update a label
 	var label2 = document.getElementById("response-line2");
+	var img1 = document.getElementById("pokemon-img");
 
 	label2.innerHTML =
-		name.replace(/\b\w/g, (l) => l.toUpperCase()) +
+		name.toLowerCase().replace(/\b\w/g, (l) => l.toUpperCase()) +
 		", you are a " +
 		response_json["name"].replace(/\b\w/g, (l) => l.toUpperCase());
+
+	img1.src = "https://pokeres.bastionbot.org/images/pokemon/" + age + ".png";
 } // end of updateTriviaWithResponse
 
 function resetLabels(number) {
@@ -104,6 +107,8 @@ function resetLabels(number) {
 	} else {
 		var resetLabel = document.getElementById("response-line2");
 		resetLabel.innerHTML = "";
+		var img1 = document.getElementById("pokemon-img");
+		img1.src = "https://pokeres.bastionbot.org/images/pokemon/1.png";
 	}
 }
 
@@ -115,4 +120,7 @@ function clearFormInfo() {
 
 	var resetLabel2 = document.getElementById("response-line2");
 	resetLabel2.innerHTML = "";
+
+	var img1 = document.getElementById("pokemon-img");
+	img1.src = "https://pokeres.bastionbot.org/images/pokemon/1.png";
 }
