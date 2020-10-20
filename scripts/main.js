@@ -44,11 +44,11 @@ function updateAgeWithResponse(name, response_text){
 
     if(response_json['age'] == null){
         label1.innerHTML = 'Apologies, we could not find your name.'
-        resetPokemonLabelText();
-    } else{
+        resetLabels(1);
+    } else {
         var age = parseInt(response_json['age']);
         makeNetworkCallToPokeAPI(name, age);
-        resetNameLabelText();
+        resetLabels(2);
     }
 } // end of updateAgeWithResponse
 
@@ -85,7 +85,12 @@ function updatePokemonWithResponse(name, response_text){
     label2.innerHTML =  name.replace(/\b\w/g, l => l.toUpperCase()) + ', you are a ' + response_json['name'].replace(/\b\w/g, l => l.toUpperCase());
 } // end of updateTriviaWithResponse
 
-function resetLabels() {
-    var resetLabel = document.getElementById("response-line2");
-	  resetLabel.innerHTML = "";
+function resetLabels(number) {
+    if (number == 2) {
+      var resetLabel = document.getElementById("response-line1");
+	    resetLabel.innerHTML = "";
+    } else {
+      var resetLabel = document.getElementById("response-line2");
+	    resetLabel.innerHTML = "";
+    }
 }
