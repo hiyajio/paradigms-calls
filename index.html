@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Daily 13</title>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daily 13</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"
+						>Daily 13 - JS Web Client | jbuenvia, zsy</a
+					>
+				</div>
+			</div>
+		</nav>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Daily 13 - JS Web Client | jbuenvia, zsy</a>
-      </div>
-    </div>
-  </nav>
+		<div class="container">
+			<div
+				class="jumbotron"
+				style="
+					background-size: cover;
+					background-position: top center;
+					background: url('https://pokeapi.co/static/pokeapi_256.888baca4.png');
+				"
+			>
+				<h1 style="color: #f5ebe2" class="jumbotronic">.</h1>
+				<h6 style="color: #f5ebe2"></h6>
+			</div>
 
-  <div class="container">
-    <div class="jumbotron" style="
-    					background-size: cover;
-    					background-position: top center;
-    					background: url('https://pokeapi.co/static/pokeapi_256.888baca4.png');
-    				">
-      <h1 style="color: #f5ebe2" class="jumbotronic">.</h1>
-      <h6 style="color: #f5ebe2"></h6>
-    </div>
+			<form class="bsr-form" action="">
+				<div class="form-group">
+					<label for="tex-input"
+						>Enter a name to know what Pokemon you are:</label
+					>
 
-    <form class="bsr-form " action="">
-      <div class="form-group">
-        <label for="tex-input">Enter a name to know what Pokemon you are:</label>
+					<input
+						name="text-input"
+						type="text"
+						class="form-control"
+						id="name-text"
+					/>
+				</div>
 
-        <input name="text-input" type="text" class="form-control" id="name-text">
-      </div>
+				<button
+					type="reset"
+					class="btn btn-default"
+					id="bsr-clear-button"
+				>
+					Reset
+				</button>
 
-      <button type="reset" class="btn btn-default" id="bsr-clear-button">Reset</button>
+				<button
+					type="button"
+					class="btn btn-default"
+					style="background-color: #f5ebe2"
+					id="bsr-submit-button"
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+		<div class="container" id="response-div">
+			<br />
+			<p id="response-line1" class="lead"></p>
+			<p id="response-line2" class="lead"></p>
+		</div>
 
-      <button type="button" class="btn btn-default" style="background-color: #f5ebe2"
-        id="bsr-submit-button">Submit</button>
-    </form>
-  </div>
-  <div class="container" id="response-div">
-    <br>
-    <p id="response-line1" class="lead"></p>
-    <p id="response-line2" class="lead"></p>
+		<footer class="footer">
+			<div class="container">
+				<hr />
+				<p class="text-muted">
+					APIs used:
+					<a
+						style="color: #2e2e2e"
+						href="https://agify.io/"
+						target="_blank"
+						>Agify.io</a
+					>
+					and
+					<a
+						style="color: #2e2e2e"
+						href="https://pokeapi.co/"
+						target="_blank"
+						>PokeAPI</a
+					>.
+				</p>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous"
+		></script>
 
-  </div>
-
-  <footer class="footer">
-    <div class="container">
-      <hr>
-      <p class="text-muted">APIs used: <a style="color: #2e2e2e" href="https://agify.io/" target="_blank">Agify.io</a>
-        and <a style="color: #2e2e2e" href="https://pokeapi.co/" target="_blank">PokeAPI</a>.</p>
-    </div>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
-
-  <script src="scripts/main.js" type="text/javascript"></script>
-
-
-</body>
-
+		<script src="scripts/main.js" type="text/javascript"></script>
+	</body>
 </html>
