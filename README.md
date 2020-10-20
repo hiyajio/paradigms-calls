@@ -1,4 +1,4 @@
-# Paradigms Calls :scroll:
+# Paradigms Calls :phone:
 Documentation of my Notre Dame Fall 2020 Programming Paradigms course assignment on HTML/JavaScript done in pairs (with [@zsy](https://github.com/zacharysy)).
 Simple Name-to-Pokemon webform using Bootstrap, GitHub Pages, Agify.io, PokeAPI, and Pokeres Bastion Bot.
 
