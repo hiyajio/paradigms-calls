@@ -44,18 +44,18 @@ function updateAgeWithResponse(name, response_text){
 
     if(response_json['age'] == null){
         label1.innerHTML = 'Apologies, we could not find your name.'
+        resetPokemonLabelText();
     } else{
-        label1.innerHTML =  name + ', your age is ' + response_json['age'];
         var age = parseInt(response_json['age']);
-        makeNetworkCallToNumbers(age);
+        makeNetworkCallToPokeAPI(name, age);
     }
 } // end of updateAgeWithResponse
 
-function makeNetworkCallToNumbers(age){
+function makeNetworkCallToPokeAPI(name, age){
     console.log('entered make nw call' + age);
     // set up url
     var xhr = new XMLHttpRequest(); // 1 - creating request object
-    var url = "http://numbersapi.com/" + age;
+    var url = "https://pokeapi.co/api/v2/pokemon/" + age;
     xhr.open("GET", url, true) // 2 - associates request attributes with xhr
 
     // set up onload
@@ -63,7 +63,7 @@ function makeNetworkCallToNumbers(age){
         // must be written before send
         console.log(xhr.responseText);
         // do something
-        updateTriviaWithResponse(age, xhr.responseText);
+        updatePokemonWithResponse(name, xhr.responseText);
     }
 
     // set up onerror
@@ -76,25 +76,14 @@ function makeNetworkCallToNumbers(age){
 
 } // end of make nw call
 
-function updateTriviaWithResponse(age, response_text){
+function updatePokemonWithResponse(name, response_text){
+    var response_json = JSON.parse(response_text);
     // update a label
     var label2 = document.getElementById("response-line2");
-    label2.innerHTML = response_text;
 
-    // dynamically adding label
-    label_item = document.createElement("label"); // "label" is a classname
-    label_item.setAttribute("id", "dynamic-label" ); // setAttribute(property_name, value) so here id is property name of button object
-
-    var item_text = document.createTextNode(response_text); // creating new text
-    label_item.appendChild(item_text); // adding something to button with appendChild()
-
-    // option 1: directly add to document
-    // adding label to document
-    //document.body.appendChild(label_item);
-
-    // option 2:
-    // adding label as sibling to paragraphs
-    var response_div = document.getElementById("response-div");
-    response_div.appendChild(label_item);
-
+    label2.innerHTML =  name.replace(/\b\w/g, l => l.toUpperCase()) + ', you are a ' + response_json['name'].replace(/\b\w/g, l => l.toUpperCase());
 } // end of updateTriviaWithResponse
+
+function resetPokemonLabelText() {
+  
+}
