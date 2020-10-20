@@ -5,3 +5,7 @@ Simple Name-to-Pokemon webform using Bootstrap, GitHub Pages, Agify.io, PokeAPI,
 <p align="center">
   <img src="https://user-images.githubusercontent.com/50670255/96538089-ba358a80-1265-11eb-8bbf-84ab9bf687f0.png" alt="Name-to-Pokemon Site Screenshot 1"/>
 </p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/50670255/96538130-cd485a80-1265-11eb-90f3-43f07c182ca6.png" alt="Name-to-Pokemon Site Screenshot 2"/>
+</p>
